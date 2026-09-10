@@ -1,0 +1,10 @@
+﻿<h2>Update Order Status:</h2>
+
+<form asp-controller="Order" asp-action="UpdateStatus" asp-route-id="@Model.Id" method="post">
+    <div>
+        <label>Status:</label>
+        <input name="status" />
+    </div>
+
+    <button type="submit">Update Status</button>
+</form>

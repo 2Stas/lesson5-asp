@@ -1,0 +1,10 @@
+﻿<h2>Delete Order</h2>
+
+<p>Id: @Model.Id</p>
+<p>Name: @Model.Name</p>
+<p>Price: @Model.Price</p>
+<p>Quantity: @Model.Quantity</p>
+
+<form method="post" action="/api/Order/Delete/@Model.Id">
+    <button type="submit">Delete</button>
+</form>

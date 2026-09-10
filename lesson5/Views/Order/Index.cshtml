@@ -1,0 +1,21 @@
+﻿<h2>All Orders</h2>
+
+@foreach (var order in Model)
+{
+    <div>
+        <p>Id: @order.Id</p>
+        <p>Name: @order.Name</p>
+        <p>Price: @order.Price</p>
+        <p>Quantity: @order.Quantity</p>
+        <p>Status: @order.Status</p>
+        <p>Custom Name: @order.CustomName</p>
+
+        <a href="/api/Order/@order.Id">Details</a>
+        <a href="/api/Order/Delete/@order.Id">Delete</a>
+        <a href="/api/Order/UpdateStatus/@order.Id">Update Status</a>
+    </div>
+
+    <hr />
+}
+
+<a href="/api/Order/Create">Create Order</a>
