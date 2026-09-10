@@ -1,4 +1,5 @@
 ﻿using lesson5.Models;
+using lesson5.DTO;
 
 namespace lesson5.Services
 {
@@ -8,7 +9,7 @@ namespace lesson5.Services
 
         Order GetById(int id);
 
-        Order Create(Order order);
+        void Create(CreateOrderDto order);
 
         Order Delete(int id);
 

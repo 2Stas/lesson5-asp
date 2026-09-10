@@ -1,4 +1,5 @@
-﻿using lesson5.Models;
+﻿using lesson5.DTO;
+using lesson5.Models;
 
 namespace lesson5.Services
 {
@@ -21,10 +22,19 @@ namespace lesson5.Services
             return ListOfOrders.FirstOrDefault(o => o.Id == id);
         }
 
-        public Order Create(Order order)
+        public void Create(CreateOrderDto order)
         {
-            ListOfOrders.Add(order);
-            return order;
+            Order finalOrder = new Order
+            {
+                Id = ListOfOrders.Max(o => o.Id) + 1,
+                Name = order.Name,
+                Price = order.Price,
+                Quantity = order.Quantity,
+                CustomName = order.CustomName,
+                Status = "Pending"
+            };
+
+            ListOfOrders.Add(finalOrder);
         }
         
         public Order Delete(int id)
