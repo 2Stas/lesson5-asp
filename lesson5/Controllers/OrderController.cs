@@ -1,6 +1,7 @@
 ﻿using lesson5.Services;
 using lesson5.Models;
 using Microsoft.AspNetCore.Mvc;
+using lesson5.DTO;
 
 namespace lesson5.Controllers
 {
@@ -42,10 +43,8 @@ namespace lesson5.Controllers
         }
 
         [HttpPost("Create")]
-        public IActionResult Create(Order order)
+        public IActionResult Create(CreateOrderDto order)
         {
-
-            order.Id = orderService.GetAll().Count + 1;
             var createdOrder = orderService.Create(order);
 
             return View("Details", createdOrder);

@@ -9,7 +9,7 @@ namespace lesson5.Services
 
         Order GetById(int id);
 
-        void Create(CreateOrderDto order);
+        Order Create(CreateOrderDto order);
 
         Order Delete(int id);
 

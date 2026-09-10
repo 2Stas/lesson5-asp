@@ -22,7 +22,7 @@ namespace lesson5.Services
             return ListOfOrders.FirstOrDefault(o => o.Id == id);
         }
 
-        public void Create(CreateOrderDto order)
+        public Order Create(CreateOrderDto order)
         {
             Order finalOrder = new Order
             {
@@ -35,6 +35,7 @@ namespace lesson5.Services
             };
 
             ListOfOrders.Add(finalOrder);
+            return finalOrder;
         }
         
         public Order Delete(int id)
